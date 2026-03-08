@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ueph.ie</title>
+
+<style>
+
+:root{
+--bg:#ffffff;
+--text:#111;
+--card:#f2f2f2;
+--border:#ddd;
+--accent:#0077ff;
+}
+
+body.dark{
+--bg:#0f1115;
+--text:#ffffff;
+--card:#161a22;
+--border:#252a33;
+--accent:#6fe3ff;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+}
+
+body{
+background:var(--bg);
+color:var(--text);
+transition:background .3s,color .3s;
+line-height:1.6;
+}
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 10%;
+border-bottom:1px solid var(--border);
+}
+
+.logo{
+font-size:1.6em;
+font-weight:600;
+color:var(--accent);
+}
+
+nav{
+display:flex;
+align-items:center;
+gap:20px;
+}
+
+nav a{
+text-decoration:none;
+color:var(--text);
+opacity:.7;
+}
+
+nav a:hover{
+opacity:1;
+}
+
+.theme-btn{
+cursor:pointer;
+padding:8px 14px;
+border-radius:6px;
+border:1px solid var(--border);
+background:var(--card);
+}
+
+.hero{
+padding:100px 10%;
+text-align:center;
+}
+
+.hero h1{
+font-size:3em;
+margin-bottom:10px;
+}
+
+.hero p{
+opacity:.7;
+font-size:1.2em;
+}
+
+.section{
+padding:80px 10%;
+}
+
+.section h2{
+margin-bottom:25px;
+}
+
+.subsection{
+margin-top:40px;
+margin-bottom:20px;
+opacity:.8;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:var(--card);
+padding:25px;
+border-radius:10px;
+border:1px solid var(--border);
+transition:.2s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.project-link{
+text-decoration:none;
+color:inherit;
+display:block;
+}
+
+footer{
+padding:30px;
+text-align:center;
+border-top:1px solid var(--border);
+margin-top:60px;
+opacity:.6;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">ueph.ie</div>
+
+<nav>
+<a href="#">Home</a>
+<a href="#projects">Projects</a>
+<a href="#services">Services</a>
+<a href="#about">About</a>
+
+<button class="theme-btn" onclick="toggleTheme()">🌙</button>
+</nav>
+
+</header>
+
+
+<section class="hero">
+
+<h1>ueph.ie</h1>
+<p>Remastered software. Modern forks. Experimental web apps.</p>
+
+</section>
+
+
+<section id="projects" class="section">
+
+<h2>Projects</h2>
+
+<h3 class="subsection">Forks / Remasters</h3>
+
+<div class="grid">
+
+<a class="project-link" href="https://ratgone.vercel.app/" target="_blank">
+
+<div class="card">
+<h3>RATGONE</h3>
+<p>Forked from Damn I Hate Rats.</p>
+</div>
+
+</a>
+
+</div>
+
+</section>
+
+
+<section id="services" class="section">
+
+<h2>Services</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>App Development</h3>
+<p>Lightweight tools and experimental software.</p>
+</div>
+
+<div class="card">
+<h3>Web Applications</h3>
+<p>Interactive and modern browser-based tools.</p>
+</div>
+
+<div class="card">
+<h3>Software Remastering</h3>
+<p>Updating old projects for modern systems.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section id="about" class="section">
+
+<h2>About</h2>
+
+<p>
+ueph.ie is a development collective focused on remastering,
+forking, and building experimental applications and web tools.
+</p>
+
+</section>
+
+
+<footer>
+© 2026 ueph.ie (we actually don't own any copyright ;-:)
+</footer>
+
+
+<script>
+
+function toggleTheme(){
+
+document.body.classList.toggle("dark")
+
+if(document.body.classList.contains("dark")){
+localStorage.setItem("theme","dark")
+}else{
+localStorage.setItem("theme","light")
+}
+
+}
+
+if(localStorage.getItem("theme") === "dark"){
+document.body.classList.add("dark")
+}
+
+</script>
+
+</body>
+</html>
